@@ -1,0 +1,39 @@
+# ======================
+# Environment & Config
+# ======================
+config/database.php
+.env
+.env.local
+
+# ======================
+# Uploaded files (user data)
+# ======================
+assets/images/users/*.jpg
+assets/images/users/*.jpeg
+assets/images/users/*.png
+assets/images/users/*.gif
+assets/images/users/*.webp
+!assets/images/users/avatar-1.jpg
+!assets/images/users/.gitkeep
+
+# ======================
+# Logs
+# ======================
+*.log
+logs/
+
+# ======================
+# OS & Editor
+# ======================
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ======================
+# Node / Build artifacts
+# ======================
+node_modules/
+dist/

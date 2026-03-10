@@ -1,0 +1,297 @@
+/* Custom Font Styles */
+
+/* นำเข้าฟอนต์จาก Google Fonts (ตัวอย่าง: Sarabun, Prompt, Kanit) */
+/* @import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&display=swap'); */
+/* @import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap'); */
+/* @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap'); */
+
+/* ตัวอย่างการใช้ฟอนต์ภาษาไทย Sarabun */
+@import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&display=swap');
+
+/* ตั้งค่าฟอนต์สำหรับทั้งเว็บไซต์ */
+body,
+.wrapper,
+h1, h2, h3, h4, h5, h6,
+.page-title,
+.btn,
+.form-control,
+.form-select,
+input,
+textarea,
+select,
+.card,
+.table,
+.navbar,
+.sidebar,
+.menu,
+p, span, div, a, li {
+    font-family: 'Sarabun', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !important;
+}
+
+/* ปรับขนาดฟอนต์ (ถ้าต้องการ) */
+body {
+    font-size: 14px;
+}
+
+h1 { font-size: 2rem; }
+h2 { font-size: 1.75rem; }
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1.25rem; }
+h5 { font-size: 1.1rem; }
+h6 { font-size: 1rem; }
+
+/* ปรับ font-weight สำหรับหัวข้อ */
+h1, h2, h3, h4, h5, h6,
+.page-title {
+    font-weight: 600;
+}
+
+/* ปรับ font-weight สำหรับปุ่ม */
+.btn {
+    font-weight: 500;
+}
+
+/* ===========================
+   เปลี่ยนฟอนต์ที่นี่
+   =========================== 
+   
+   วิธีเปลี่ยนฟอนต์:
+   1. เลือกฟอนต์จาก Google Fonts: https://fonts.google.com/
+   2. คัดลอก @import url(...) มาวางด้านบน
+   3. เปลี่ยน 'Sarabun' ในบรรทัด font-family เป็นชื่อฟอนต์ที่ต้องการ
+   
+   ตัวอย่างฟอนต์ภาษาไทยยอดนิยม:
+   - Sarabun (ปัจจุบัน)
+   - Prompt
+   - Kanit
+   - Mitr
+   - Bai Jamjuree
+   - Chakra Petch
+   - Noto Sans Thai
+   - IBM Plex Sans Thai
+   
+   ตัวอย่างฟอนต์ภาษาอังกฤษ:
+   - Roboto
+   - Open Sans
+   - Lato
+   - Montserrat
+   - Poppins
+   - Inter
+*/
+/* Fix Academic Year Dropdown Vertical Alignment */
+.navbar-custom .topbar-menu > li.dropdown.notification-list > a.nav-link {
+    display: flex;
+    align-items: center;
+    padding-top: 1.375rem;
+    padding-bottom: 1.375rem;
+}
+/* Fix Search Icon Vertical Alignment on Mobile */
+.navbar-custom .topbar-menu > li.dropdown.notification-list.d-lg-none > a.nav-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ==================================
+   Mobile Responsive Fixes
+   ================================== */
+
+/* แสดงปุ่มที่อยู่ใน page-title-right ใน mobile */
+@media (max-width: 767.98px) {
+    .page-title-box {
+        display: block !important;
+    }
+    
+    .page-title-box .page-title-right {
+        display: block !important;
+        float: none !important;
+        margin-top: 15px !important;
+        margin-bottom: 15px;
+    }
+    
+    .page-title-box .page-title-right .btn {
+        width: 100%;
+        margin-bottom: 8px;
+    }
+    
+    .page-title-box .page-title {
+        line-height: normal !important;
+        padding: 10px 0;
+    }
+    
+    /* ปรับขนาดปุ่ม Previous/Next ของ DataTables ใน mobile */
+    .dataTables_wrapper .dataTables_paginate .paginate_button {
+        padding: 0.25rem 0.5rem !important;
+        font-size: 0.75rem !important;
+        min-width: auto !important;
+    }
+    
+    .dataTables_wrapper .dataTables_paginate .paginate_button.previous,
+    .dataTables_wrapper .dataTables_paginate .paginate_button.next {
+        padding: 0.25rem 0.75rem !important;
+    }
+    
+    .dataTables_wrapper .dataTables_info {
+        font-size: 0.75rem !important;
+    }
+    
+    .dataTables_wrapper .dataTables_length select {
+        padding: 0.25rem 1.5rem 0.25rem 0.5rem !important;
+        font-size: 0.75rem !important;
+    }
+    
+    /* เพิ่มระยะห่างระหว่างปุ่มและปฏิทินใน mobile */
+    #calendar {
+        margin-bottom: 20px !important;
+    }
+}
+
+/* ==================================
+   Datepicker Inline Customization
+   ================================== */
+.datepicker-inline {
+    width: 100% !important;
+}
+
+.datepicker-inline .datepicker {
+    width: 100% !important;
+}
+
+.datepicker-inline table {
+    width: 100% !important;
+    font-size: 14px;
+}
+
+.datepicker-inline .datepicker-days table tbody td,
+.datepicker-inline .datepicker-days table thead th {
+    padding: 10px;
+    width: 14.28%;
+    height: 45px;
+}
+
+.datepicker-inline .datepicker-days table thead th.datepicker-switch {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.datepicker-inline .datepicker table tr td.active,
+.datepicker-inline .datepicker table tr td.active:hover,
+.datepicker-inline .datepicker table tr td.selected {
+    background-color: #727cf5;
+    border-color: #727cf5;
+}
+
+.datepicker-inline .datepicker table tr td.today {
+    background-color: transparent !important;
+    color: #dc3545 !important;
+    font-weight: bold;
+}
+
+.datepicker-inline .datepicker table tr td.today:before {
+    border: none !important;
+}
+
+/* ==================================
+   Sortable Table Customization // Admin club positions Page
+   ================================== */
+.mdi-drag-vertical {
+    cursor: grab !important;
+    font-size: 1.2rem;
+    color: #6c757d;
+}
+.mdi-drag-vertical:active {
+    cursor: grabbing !important;
+}
+#sortable-positions tr {
+    transition: background-color 0.2s;
+}
+#sortable-positions tr:hover {
+    background-color: #f8f9fa;
+}
+.ui-sortable-helper {
+    background-color: #fff !important;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* ==================================
+   Timeline Component Customization // task view page
+   ================================== */
+.timeline-status {
+        position: relative;
+        padding: 0;
+        margin: 20px 0;
+    }
+
+    .timeline-item {
+        position: relative;
+        padding: 15px 0;
+        display: flex;
+        align-items: center;
+    }
+
+    .timeline-item.show-line:after {
+        content: '';
+        position: absolute;
+        left: 22px;
+        top: 45px;
+        width: 2px;
+        height: calc(100% - 15px);
+        background: #dee2e6;
+        z-index: 0;
+    }
+
+    .timeline-icon {
+        position: relative;
+        z-index: 1;
+        flex-shrink: 0;
+    }
+
+    .icon-circle {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        transition: all 0.3s;
+        background: white;
+        border: 2px solid #dee2e6;
+    }
+
+    .timeline-item.active .icon-circle {
+        border-color: #727cf5;
+    }
+
+    .timeline-item.current .icon-circle {
+        animation: pulse 2s infinite;
+        box-shadow: 0 0 0 0 rgba(114, 124, 245, 0.7);
+    }
+
+    @keyframes pulse {
+        0% {
+            box-shadow: 0 0 0 0 rgba(114, 124, 245, 0.7);
+        }
+
+        70% {
+            box-shadow: 0 0 0 10px rgba(114, 124, 245, 0);
+        }
+
+        100% {
+            box-shadow: 0 0 0 0 rgba(114, 124, 245, 0);
+        }
+    }
+
+    .timeline-content {
+        margin-left: 15px;
+        flex-grow: 1;
+    }
+
+    .timeline-content h6 {
+        margin-bottom: 5px;
+        font-weight: 600;
+    }
+
+    .timeline-content small {
+        font-size: 12px;
+    }
