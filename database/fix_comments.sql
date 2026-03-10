@@ -1,2 +1,0 @@
-USE dashboard_db;
-ALTER TABLE club_departments MODIFY COLUMN name VARCHAR(100) NOT NULL UNIQUE COMMENT 'ชื่อฝ่าย', MODIFY COLUMN description TEXT COMMENT 'คำอธิบาย', MODIFY COLUMN icon VARCHAR(50) COMMENT 'ไอคอน', MODIFY COLUMN color VARCHAR(20) COMMENT 'สี';

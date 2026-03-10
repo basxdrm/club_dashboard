@@ -1,7 +1,0 @@
-USE dashboard_db;
-
-ALTER TABLE member_contacts
-MODIFY COLUMN phone_number VARCHAR(20) NULL COMMENT 'เบอร์โทรศัพท์',
-MODIFY COLUMN line_id VARCHAR(100) NULL COMMENT 'LINE ID',
-MODIFY COLUMN facebook VARCHAR(255) NULL COMMENT 'Facebook',
-MODIFY COLUMN instagram VARCHAR(100) NULL COMMENT 'Instagram';
