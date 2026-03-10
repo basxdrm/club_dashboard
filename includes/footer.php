@@ -18,10 +18,10 @@ if (strpos($_SERVER['PHP_SELF'], '/pages/') !== false) {
                             <div class="col-md-6">
                                 <div class="text-md-end footer-links d-none d-md-block">
                                     <span class="text-muted me-2" style="font-size: 0.75rem;">v1.1.2</span>
-                                    <a href="#" target="_blank"><i class="mdi mdi-facebook"></i></a>
-                                    <a href="#" target="_blank"><i class="mdi mdi-instagram"></i></a>
-                                    <a href="#" target="_blank"><i class="mdi mdi-music-note"></i></a>
-                                    <a href="#" target="_blank"><i class="mdi mdi-web"></i></a>
+                                    <a href="https://www.facebook.com/Mediastylejirong" target="_blank"><i class="mdi mdi-facebook"></i></a>
+                                    <a href="https://www.instagram.com/msj_jirong.official" target="_blank"><i class="mdi mdi-instagram"></i></a>
+                                    <a href="https://www.tiktok.com/@msj_jirong.official" target="_blank"><i class="mdi mdi-music-note"></i></a>
+                                    <a href="https://www.msjjirong.org" target="_blank"><i class="mdi mdi-web"></i></a>
                                 </div>
                             </div>
                         </div>
