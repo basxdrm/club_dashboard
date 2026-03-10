@@ -2,7 +2,7 @@
 define('APP_ACCESS', true);
 session_start();
 
-require_once '../config/security.php';
+require_once __DIR__ . '/../config/security.php';
 
 header('Content-Type: application/json');
 

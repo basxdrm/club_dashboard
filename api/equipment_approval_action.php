@@ -7,14 +7,14 @@ ini_set('session.use_strict_mode', 1);
 ini_set('session.cookie_samesite', 'Strict');
 session_start();
 
-require_once '../config/database.php';
-require_once '../config/security.php';
-require_once '../includes/auth.php';
+require_once __DIR__ . '/../config/database.php';
+require_once __DIR__ . '/../config/security.php';
+require_once __DIR__ . '/../includes/auth.php';
 
 requireLogin();
 
 // Check if user is admin or board
-if (!isset($_SESSION['role']) || !in_array($_SESSION['role'], ['admin', 'board'])) {
+if (!isset($_SESSION['role']) || !in_array($_SESSION['role'], ['admin', 'board', 'advisor'])) {
     echo json_encode(['success' => false, 'message' => 'Unauthorized']);
     exit();
 }

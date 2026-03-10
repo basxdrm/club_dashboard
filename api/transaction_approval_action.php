@@ -7,14 +7,14 @@ ini_set('session.cookie_samesite', 'Strict');
 ini_set('session.use_strict_mode', 1);
 session_start();
 
-require_once '../config/database.php';
-require_once '../config/security.php';
-require_once '../includes/auth.php';
+require_once __DIR__ . '/../config/database.php';
+require_once __DIR__ . '/../config/security.php';
+require_once __DIR__ . '/../includes/auth.php';
 
 header('Content-Type: application/json');
 
 // Check authentication and authorization
-if (!isset($_SESSION['user_id']) || !isset($_SESSION['role']) || !in_array($_SESSION['role'], ['admin', 'board'])) {
+if (!isset($_SESSION['user_id']) || !isset($_SESSION['role']) || !in_array($_SESSION['role'], ['admin', 'board', 'advisor'])) {
     http_response_code(403);
     echo json_encode([
         'success' => false,

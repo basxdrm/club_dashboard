@@ -7,9 +7,9 @@ ini_set('session.cookie_samesite', 'Strict');
 ini_set('session.use_strict_mode', 1);
 session_start();
 
-require_once '../config/database.php';
-require_once '../config/security.php';
-require_once '../includes/auth.php';
+require_once __DIR__ . '/../config/database.php';
+require_once __DIR__ . '/../config/security.php';
+require_once __DIR__ . '/../includes/auth.php';
 
 header('Content-Type: application/json');
 
@@ -77,7 +77,7 @@ try {
 
     // Check user role - if admin/board, auto-approve, else pending
     $role = $_SESSION['role'] ?? 'member';
-    $status = in_array($role, ['admin', 'board']) ? 'approved' : 'pending';
+    $status = in_array($role, ['admin', 'board', 'advisor']) ? 'approved' : 'pending';
     $approved_by = ($status === 'approved') ? $_SESSION['user_id'] : null;
 
     // Generate unique transaction code

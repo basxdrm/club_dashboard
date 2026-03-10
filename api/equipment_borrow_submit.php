@@ -5,9 +5,9 @@ ini_set('session.use_strict_mode', 1);
 ini_set('session.cookie_samesite', 'Strict');
 session_start();
 
-require_once '../config/database.php';
-require_once '../config/security.php';
-require_once '../includes/auth.php';
+require_once __DIR__ . '/../config/database.php';
+require_once __DIR__ . '/../config/security.php';
+require_once __DIR__ . '/../includes/auth.php';
 
 requireLogin();
 
@@ -68,7 +68,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             // Check if user is admin or board - auto approve
             $user_role = $_SESSION['role'] ?? 'member';
-            $is_admin_or_board = in_array($user_role, ['admin', 'board']);
+            $is_admin_or_board = in_array($user_role, ['admin', 'board', 'advisor']);
             
             $status = $is_admin_or_board ? 'borrowed' : 'pending';
             $approved_by = $is_admin_or_board ? $_SESSION['user_id'] : null;

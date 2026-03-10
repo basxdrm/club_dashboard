@@ -5,9 +5,9 @@ ini_set('session.use_strict_mode', 1);
 ini_set('session.cookie_samesite', 'Strict');
 session_start();
 
-require_once '../config/database.php';
-require_once '../config/security.php';
-require_once '../includes/auth.php';
+require_once __DIR__ . '/../config/database.php';
+require_once __DIR__ . '/../config/security.php';
+require_once __DIR__ . '/../includes/auth.php';
 
 requireLogin();
 
@@ -44,7 +44,7 @@ if ($action === 'request_return') {
     }
 } else {
     // Other actions require admin/board role
-    if (!in_array($_SESSION['role'], ['admin', 'board'])) {
+    if (!in_array($_SESSION['role'], ['admin', 'board', 'advisor'])) {
         echo json_encode(['success' => false, 'message' => 'ไม่มีสิทธิ์ในการดำเนินการ']);
         exit;
     }
@@ -73,7 +73,7 @@ try {
             
             // Check if user is admin/board - auto approve return
             $user_role = $_SESSION['role'] ?? 'member';
-            $is_admin_or_board = in_array($user_role, ['admin', 'board']);
+            $is_admin_or_board = in_array($user_role, ['admin', 'board', 'advisor']);
             
             if ($is_admin_or_board) {
                 // Auto approve return for admin/board

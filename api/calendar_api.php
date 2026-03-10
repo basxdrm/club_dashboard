@@ -8,8 +8,8 @@ ini_set('session.cookie_samesite', 'Strict');
 ini_set('session.use_strict_mode', 1);
 session_start();
 
-require_once '../config/database.php';
-require_once '../includes/auth.php';
+require_once __DIR__ . '/../config/database.php';
+require_once __DIR__ . '/../includes/auth.php';
 
 // Check if user is logged in
 if (!isset($_SESSION['user_id']) && !isset($_SESSION['email'])) {

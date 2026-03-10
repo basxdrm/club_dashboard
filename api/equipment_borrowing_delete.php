@@ -2,13 +2,13 @@
 define('APP_ACCESS', true);
 session_start();
 
-require_once '../config/database.php';
-require_once '../includes/auth.php';
+require_once __DIR__ . '/../config/database.php';
+require_once __DIR__ . '/../includes/auth.php';
 
 header('Content-Type: application/json');
 
 // ตรวจสอบการล็อกอินและสิทธิ์
-if (!isset($_SESSION['user_id']) || !hasRole(['admin', 'board'])) {
+if (!isset($_SESSION['user_id']) || !hasRole(['admin', 'board', 'advisor'])) {
     echo json_encode(['success' => false, 'message' => 'ไม่มีสิทธิ์เข้าถึง']);
     exit;
 }

@@ -37,3 +37,13 @@ Thumbs.db
 # ======================
 node_modules/
 dist/
+
+# Config files specific to instance
+config/login_bg.txt
+
+# Extra SQL files (keep only database/schema.sql)
+database/*.sql
+!database/schema.sql
+
+# Root SQL utilities
+*.sql

@@ -7,9 +7,9 @@ ini_set('session.cookie_samesite', 'Strict');
 ini_set('session.use_strict_mode', 1);
 session_start();
 
-require_once '../config/database.php';
-require_once '../config/security.php';
-require_once '../includes/auth.php';
+require_once __DIR__ . '/../config/database.php';
+require_once __DIR__ . '/../config/security.php';
+require_once __DIR__ . '/../includes/auth.php';
 
 header('Content-Type: application/json');
 
@@ -68,12 +68,12 @@ try {
 
     $role = $_SESSION['role'] ?? 'member';
     // Only the creator or admin/board can edit
-    if ($trans['recorded_by'] != $_SESSION['user_id'] && !in_array($role, ['admin', 'board'])) {
+    if ($trans['recorded_by'] != $_SESSION['user_id'] && !in_array($role, ['admin', 'board', 'advisor'])) {
         throw new Exception('คุณไม่มีสิทธิ์แก้ไขรายการนี้');
     }
 
     // If status is approved and user is not admin/board, cannot edit
-    if ($trans['status'] === 'approved' && !in_array($role, ['admin', 'board'])) {
+    if ($trans['status'] === 'approved' && !in_array($role, ['admin', 'board', 'advisor'])) {
         throw new Exception('ไม่สามารถแก้ไขรายการที่อนุมัติแล้ว');
     }
 

@@ -7,9 +7,9 @@ ini_set('session.cookie_samesite', 'Strict');
 ini_set('session.use_strict_mode', 1);
 session_start();
 
-require_once '../config/database.php';
-require_once '../config/security.php';
-require_once '../includes/auth.php';
+require_once __DIR__ . '/../config/database.php';
+require_once __DIR__ . '/../config/security.php';
+require_once __DIR__ . '/../includes/auth.php';
 
 header('Content-Type: application/json');
 
@@ -20,7 +20,7 @@ if (!isset($_SESSION['user_id'])) {
 }
 
 // Check if user has admin or board role
-if (!hasRole(['admin', 'board'])) {
+if (!hasRole(['admin', 'board', 'advisor'])) {
     http_response_code(403);
     echo json_encode(['success' => false, 'message' => 'คุณไม่มีสิทธิ์ลบรายการ']);
     exit();
