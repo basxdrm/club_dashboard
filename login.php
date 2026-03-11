@@ -113,6 +113,22 @@ if (file_exists('config/login_bg.txt')) {
     <meta name="robots" content="noindex, nofollow">
     <link rel="icon" type="image/x-icon" href="assets/images/logos/MSJ logo new 512.png">
 
+    <!-- PWA -->
+    <link rel="manifest" href="/new_dashboard/manifest.json">
+    <meta name="theme-color" content="#3b7ddd">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="MSJ Dashboard">
+    <link rel="apple-touch-icon" href="/new_dashboard/assets/images/logos/icon-192.png">
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/new_dashboard/sw.js')
+                    .catch(err => console.warn('SW registration failed:', err));
+            });
+        }
+    </script>
+
     <!-- App css -->
     <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" id="app-style" />
