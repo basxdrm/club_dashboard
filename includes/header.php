@@ -18,6 +18,24 @@
     <!-- App favicon -->
     <link rel="icon" type="image/x-icon" href="<?php echo $base_path; ?>assets/images/logos/MSJ logo new 512.png">
 
+    <!-- PWA -->
+    <link rel="manifest" href="/new_dashboard/manifest.json">
+    <meta name="theme-color" content="#3b7ddd">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="MSJ Dashboard">
+    <link rel="apple-touch-icon" href="/new_dashboard/assets/images/logos/icon-192.png">
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/new_dashboard/sw.js')
+                    .catch(err => console.warn('SW registration failed:', err));
+            });
+        }
+    </script>
+
     <?php if (isset($include_jvectormap) && $include_jvectormap): ?>
         <!-- Vector Map css -->
         <link href="<?php echo $base_path; ?>assets/css/vendor/jquery-jvectormap-1.2.2.css" rel="stylesheet" type="text/css" />
